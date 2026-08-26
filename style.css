@@ -1,0 +1,127 @@
+:root {
+  --paper: #ffffff;
+  --ink: #23201b;
+  --muted: #6b665e;
+  --accent: #274060;
+  --rule: #d9d4cb;
+  --card: #f7f5f0;
+  --proven: #1e6b3a;
+  --probable: #8a6d1a;
+  --lore: #8a4a1a;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1b1917;
+    --ink: #e8e4dc;
+    --muted: #a29c91;
+    --accent: #8fb3d9;
+    --rule: #3a362f;
+    --card: #24211d;
+    --proven: #6fce96;
+    --probable: #d9bc5e;
+    --lore: #d99a5e;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1b1917; --ink: #e8e4dc; --muted: #a29c91; --accent: #8fb3d9;
+  --rule: #3a362f; --card: #24211d; --proven: #6fce96; --probable: #d9bc5e; --lore: #d99a5e;
+}
+:root[data-theme="light"] {
+  --paper: #ffffff; --ink: #23201b; --muted: #6b665e; --accent: #274060;
+  --rule: #d9d4cb; --card: #f7f5f0; --proven: #1e6b3a; --probable: #8a6d1a; --lore: #8a4a1a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.65;
+}
+main { max-width: 720px; margin: 0 auto; padding: 24px 20px 80px; }
+nav {
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 20px;
+  font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  display: flex; flex-wrap: wrap; gap: 6px 18px;
+  max-width: 720px; margin: 0 auto;
+}
+nav a { color: var(--muted); text-decoration: none; letter-spacing: 0.02em; }
+nav a:hover, nav a.here { color: var(--accent); }
+nav a.here { font-weight: 700; }
+h1 { font-size: 34px; line-height: 1.2; margin: 30px 0 6px; text-wrap: balance; }
+h2 { font-size: 24px; margin: 44px 0 10px; text-wrap: balance; }
+.sub { color: var(--muted); font-size: 17px; margin: 0 0 26px; }
+p { margin: 0 0 18px; }
+a { color: var(--accent); }
+blockquote {
+  margin: 22px 0; padding: 14px 20px;
+  border-left: 3px solid var(--accent);
+  background: var(--card);
+  font-size: 17px;
+}
+blockquote p { margin: 0 0 8px; } blockquote p:last-child { margin: 0; }
+figure { margin: 26px 0; }
+figure img { max-width: 100%; height: auto; border: 1px solid var(--rule); display: block; }
+figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+.badge {
+  display: inline-block; font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 1px 7px; border-radius: 3px; vertical-align: 2px;
+  border: 1px solid currentColor;
+}
+.proven { color: var(--proven); }
+.probable { color: var(--probable); }
+.lore { color: var(--lore); }
+.cards { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 30px 0; }
+@media (min-width: 620px) { .cards { grid-template-columns: 1fr 1fr; } }
+.card {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 6px;
+  padding: 18px 20px; text-decoration: none; color: var(--ink); display: block;
+}
+.card:hover { border-color: var(--accent); }
+.card h3 { margin: 0 0 4px; font-size: 20px; color: var(--accent); }
+.card .who { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.card p { font-size: 16px; margin: 0 0 10px; }
+.card .depth { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: var(--muted); margin: 0; }
+ul.docs { list-style: none; padding: 0; margin: 18px 0; }
+ul.docs li { padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
+ul.docs li:first-child { border-top: 1px solid var(--rule); }
+.doc-what { color: var(--muted); font-size: 14px; display: block; font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+.footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 15px; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 16px; }
+th, td { text-align: left; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+td { font-variant-numeric: tabular-nums; }
+
+/* ---- family descent tree ---- */
+.familytree { margin: 26px 0 10px; text-align: center; font-family: -apple-system,'Helvetica Neue',Arial,sans-serif; }
+.familytree .tline { color: var(--muted); font-size: 13px; margin: 2px 0 14px; }
+.node { display: inline-block; border: 1.5px solid var(--rule); border-radius: 7px; padding: 9px 15px; background: var(--card); max-width: 26em; }
+.node .role { display: block; font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin-bottom: 1px; }
+.node .nm { font-family: Georgia,'Times New Roman',serif; font-weight: 700; font-size: 16px; }
+.node .yr { color: var(--muted); font-size: 13px; }
+.node .pl { display: block; font-size: 12px; color: var(--muted); margin-top: 1px; }
+.node.apex { border-color: var(--accent); border-width: 2px; }
+.connector { width: 2px; height: 20px; background: var(--rule); margin: 0 auto; }
+.children { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 4px; }
+.children .node { max-width: 15em; font-size: 13px; padding: 6px 10px; background: var(--paper); }
+.children .node .nm { font-size: 14px; }
+.usnote { margin-top: 16px; font-size: 15px; color: var(--ink); font-style: italic; }
+
+/* ---- print: isolate the tree onto a clean page ---- */
+@media print {
+  :root { --paper:#fff; --ink:#111; --muted:#555; --accent:#111; --rule:#999; --card:#fff; }
+  body { background:#fff; color:#111; }
+  nav, .footer, figure, blockquote, .archive, .ask { display: none !important; }
+  main > *:not(h1):not(.familytree):not(.printline) { display: none !important; }
+  main { max-width: 100%; }
+  a { color:#111; text-decoration:none; }
+  .node { background:#fff; border-color:#333; }
+  .node.apex { border-color:#111; }
+  .children .node { background:#fff; }
+  .familytree { page-break-inside: avoid; }
+}
